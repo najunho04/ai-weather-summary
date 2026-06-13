@@ -4,7 +4,31 @@ import { CITY_GRID } from "../lib/cities.js";
 import { fetchForecast } from "../lib/weather.js";
 import { summarize } from "../lib/summary.js";
 
+const requestLog = {};
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  const windowMs = 60000; // 1분
+  const maxRequests = 3;
+
+  if (!requestLog[ip]) requestLog[ip] = [];
+  requestLog[ip] = requestLog[ip].filter(t => now - t < windowMs);
+
+  if (requestLog[ip].length >= maxRequests) {
+    return true;
+  }
+  requestLog[ip].push(now);
+  return false;
+}
+
 export default async function handler(req, res) {
+  const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+
+  if (isRateLimited(ip)) {
+    res.status(429).json({ error: "요청이 너무 많습니다. 1분 후 다시 시도하세요." });
+    return;
+  }
+
   const city = (req.query?.city || "").trim();
 
   if (!city) {
