@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 날씨 요약</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>🌤️ AI 날씨 요약</h1>
+      <p class="subtitle">도시를 선택하면 Claude가 오늘 날씨를 요약해 드려요.</p>
+
+      <div class="controls">
+        <select id="city" aria-label="도시 선택"></select>
+        <button id="go" type="button">요약 보기</button>
+      </div>
+
+      <section id="result" class="result" hidden>
+        <h2 id="result-city"></h2>
+        <p id="summary"></p>
+      </section>
+
+      <p id="status" class="status" role="status"></p>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

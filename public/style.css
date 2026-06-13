@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #6fb1fc 0%, #4364f7 100%);
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  color: #1a2233;
+  padding: 1rem;
+}
+
+.card {
+  background: #fff;
+  width: 100%;
+  max-width: 480px;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin: 0 0 1.5rem;
+  color: #5b6478;
+  font-size: 0.95rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+select {
+  flex: 1;
+  padding: 0.7rem;
+  border: 1px solid #cdd5e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+button {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background: #4364f7;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.result {
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  background: #f4f7ff;
+  border-radius: 12px;
+}
+
+.result h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+}
+
+.result p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.status {
+  margin-top: 1rem;
+  min-height: 1.2rem;
+  font-size: 0.9rem;
+  color: #c0392b;
+}

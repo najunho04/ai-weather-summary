@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.local
+.vercel
+*.log
+
+# 계획 파이프라인 내부 산출물(검증용 임시/추출 파일)은 커밋 제외
+.pipeline/
+outputs/.*
